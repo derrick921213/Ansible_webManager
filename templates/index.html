@@ -34,44 +34,46 @@
                                 Welcome Back!
                             </h4>
                             <p class="signup__para">
-                                To keep connected width us please <br> login with your personal info
+                                To manage virtual machine please login.
                             </p>
-                            <a href="#!" class="btn btn--secondary">SIGN IN</a>
+                            <!--<a href="#!" class="btn btn--secondary">SIGN IN</a>-->>
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="signup__form signup__center">
-                            <h4 class="signup__title">Create Account</h4>
-                            <div class="social-btns">
-                                <a href="https://www.facebook.com/" class="social-btns__item">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https://www.instagram.com/" class="social-btns__item">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin"
-                                    class="social-btns__item">
-                                    <i class="fab fa-google-plus"></i>
-                                </a>
-                            </div>
-                            <p class="signup__para signup__para--sm">or use your email for registration:</p>
-                            <form action="" class="form">
+                            <h4 class="signup__title">SIGN IN</h4>
+
+
+                            <form method=post action={{url_for('login')}} class="form">
                                 <div class="input_group form__item">
                                     <i class="far fa-user"></i>
-                                    <input type="text" placeholder="Name">
-                                </div>
-                                <div class="input_group form__item">
-                                    <i class="far fa-envelope"></i>
-                                    <input type="email" placeholder="Email">
+                                    <input type="text" placeholder="Username" name=username>
                                 </div>
                                 <div class="input_group form__item">
                                     <i class="fas fa-unlock-alt"></i>
-                                    <input type="password" placeholder="Password">
+                                    <input type="password" placeholder="Password" name=password>
                                 </div>
+                                <!--<div class="input_group form__item">
+                                    <i class="far">{{check_code}}</i>
+                                    <input type="text" placeholder="Verification Code" name=code>
+                                </div>-->
                                 <div class="input_group form__item form__item--center">
-                                    <input class="btn btn--primary" type="submit" value="SIGN UP">
+                                    <input class="btn btn--primary" type="submit" value="Login">
                                 </div>
                             </form>
+                            <p class="signup__para signup__para--sm">You can find relevant resources in the following
+                                communities</p>
+                            <div class="social-btns">
+                                <a href="https://www.duacodie.com/" class="social-btns__item">
+                                    <i class="fas fa-blog"></i>
+                                </a>
+                                <a href="https://github.com/derrick921213/Ansible_webManager" class="social-btns__item">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#!" class="social-btns__item">
+                                    <i class="fab fa-readme"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
