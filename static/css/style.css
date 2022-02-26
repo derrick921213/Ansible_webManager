@@ -185,7 +185,7 @@ input[type="email"]:focus{
     justify-content: center;
 }
 .signup__welcome{
-    background-image: url('../images/background.jpg');
+    background-image: url("/static/images/background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
