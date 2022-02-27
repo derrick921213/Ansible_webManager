@@ -1,6 +1,7 @@
-import re,os
+import os
 from simplepam import authenticate
 from flask import Flask, session,redirect,url_for,escape,request,render_template
+from temp.gen import gen_code,check_code
 
 app = Flask(__name__)
 
@@ -10,13 +11,6 @@ def index():
         return 'Logged in as %s <p><a href="%s" target="_self">Logout</a></p>' % (escape(session['username']),'/logout')
     return redirect(url_for('login'))
 
-@app.route('/index')
-def home():
-    return render_template("index.html")
-
-@app.route('/test')
-def test():
-    return render_template("test.html")
 
 @app.route('/login',methods=['GET','POST'])
 def login():
@@ -28,13 +22,13 @@ def login():
             return redirect(url_for('index'))
         else:
             return redirect(url_for('login'))
-    return '''
-        <form action="" method="post">
-            <p><input type=text name=username>
-            <p><input type=password name=password>
-            <p><input type=submit value=Login>
-        </form>
-    '''
+    return render_template('index.html')
+        #form action="" method="post">
+        #    <p><input type=text name=username>
+        #    <p><input type=password name=password>
+        #    <p><input type=submit value=Login>
+        #</form>
+
 
 @app.route('/logout')
 def logout():
