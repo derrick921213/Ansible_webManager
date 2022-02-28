@@ -8,6 +8,11 @@ flask = "*"
 flask-login = "*"
 simplepam = "*"
 shell = "*"
+ansible-runner = "*"
+ansible-runner-http = "*"
+protobuf = "*"
+ansible = "*"
+ansible-inventory = "*"
 
 [dev-packages]
 
