@@ -4,17 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
-flask-login = "*"
-simplepam = "*"
-shell = "*"
-ansible-runner = "*"
-ansible-runner-http = "*"
-protobuf = "*"
-ansible = "*"
-ansible-inventory = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.9"
