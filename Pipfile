@@ -4,6 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+ansible = "*"
+ansible-inventory = "*"
+ansible-runner-http = "*"
+ansible-runner = "*"
+flask-login = "*"
+flask = "*"
+shell = "*"
+simplepam = "*"
 
 [dev-packages]
 
