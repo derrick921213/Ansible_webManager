@@ -22,12 +22,6 @@ def login():
         else:
             return redirect(url_for('login'))
     return render_template('index.html')
-        #form action="" method="post">
-        #    <p><input type=text name=username>
-        #    <p><input type=password name=password>
-        #    <p><input type=submit value=Login>
-        #</form>
-
 
 @app.route('/logout')
 def logout():
