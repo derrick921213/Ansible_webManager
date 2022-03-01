@@ -12,6 +12,7 @@ flask-login = "*"
 flask = "*"
 shell = "*"
 simplepam = "*"
+pyyaml = "*"
 
 [dev-packages]
 
