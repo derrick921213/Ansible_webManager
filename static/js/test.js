@@ -41,7 +41,7 @@ var $logout = $('<input />', {
         "padding": "0px"
     }
 }).on('click', function () {
-    window.location.href ='http://192.168.2.21:5000/logout';
+    window.location.href ='/logout';
 })
 
 $sidebar.append($('<div />', { 

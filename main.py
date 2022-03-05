@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     if 'username' in session:
         user_title = list(session['username'])[0].upper()
-        return render_template('starter.html',user_title=user_title)
+        return render_template('starter.html',user_title=user_title,server_ip=request.remote_addr)
     return redirect(url_for('login'))
 
 
