@@ -1,13 +1,14 @@
 import os
 from simplepam import authenticate
-from flask import Flask, session,redirect,url_for,escape,request,render_template
+from flask import Flask, session,redirect,url_for,request,render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     if 'username' in session:
-        return 'Logged in as %s <p><a href="%s" target="_self">Logout</a></p>' % (escape(session['username']),url_for('logout'))
+        user_title = list(session['username'])[0].upper()
+        return render_template('starter.html',user_title=user_title)
     return redirect(url_for('login'))
 
 
@@ -17,7 +18,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
         if authenticate(str(username),str(password)):
-            session['username'] = request.form['username']
+            session['username'] = username
             return redirect(url_for('index'))
         else:
             return redirect(url_for('login'))
