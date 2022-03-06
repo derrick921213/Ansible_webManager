@@ -1,6 +1,6 @@
 import os
-from simplepam import authenticate
 from flask import Flask, session,redirect,url_for,request,render_template
+from Utils.account import canLogin
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     if 'username' in session:
         user_title = list(session['username'])[0].upper()
-        return render_template('starter.html',user_title=user_title,server_ip=request.remote_addr)
+        return render_template('starter.html',user_title=user_title,home='/')
     return redirect(url_for('login'))
 
 
@@ -17,7 +17,8 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if authenticate(str(username),str(password)):
+        method = request.form['method']
+        if canLogin(str(username),str(password), 'sudo' if 'admin' in str(method) else False):
             session['username'] = username
             return redirect(url_for('index'))
         else:
@@ -26,11 +27,9 @@ def login():
 
 @app.route('/logout')
 def logout():
-    # remove the username from the session if it's there
     session.pop('username', None)
     return redirect(url_for('index'))
 
-# set the secret key.  keep this really secret:
 app.secret_key = os.urandom(24)
 
 if __name__ == '__main__':

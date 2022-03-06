@@ -45,14 +45,18 @@
 
 
                             <form method=post action={{url_for('login')}} class="form">
-                                <div class="input_group form__item">
+                                <div class="input_group form__item size">
                                     <i class="far fa-user"></i>
                                     <input type="text" placeholder="Username" name=username>
                                 </div>
-                                <div class="input_group form__item">
+                                <div class="input_group form__item size">
                                     <i class="fas fa-unlock-alt"></i>
                                     <input type="password" placeholder="Password" name=password>
                                 </div>
+                                <select class="input_group form__item size" name="method">
+                                    <option name="user" value="user">Regular user</option>
+                                    <option name="admin" value="admin">Administrator</option>
+                                </select>
                                 <div class="input_group form__item form__item--center">
                                     <input class="btn btn--primary" type="submit" value="Login">
                                 </div>
