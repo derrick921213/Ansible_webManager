@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='vendor/bootstrap-grid.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='vendor/fontawesome-free-5.13.0-web/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -36,7 +38,7 @@
                             <p class="signup__para">
                                 To manage virtual machine please login.
                             </p>
-                            <!--<a href="#!" class="btn btn--secondary">SIGN IN</a>-->>
+                            <!--<a href="#!" class="btn btn--secondary">SIGN IN</a>-->
                         </div>
                     </div>
                     <div class="col-lg-8">
@@ -45,15 +47,15 @@
 
 
                             <form method=post action={{url_for('login')}} class="form">
-                                <div class="input_group form__item size">
+                                <div class="input_group form__item">
                                     <i class="far fa-user"></i>
                                     <input type="text" placeholder="Username" name=username>
                                 </div>
-                                <div class="input_group form__item size">
+                                <div class="input_group form__item ">
                                     <i class="fas fa-unlock-alt"></i>
                                     <input type="password" placeholder="Password" name=password>
                                 </div>
-                                <select class="input_group form__item size" name="method">
+                                <select class="input_group form__item" name="method" style="width: 180px; margin: auto;">
                                     <option name="user" value="user">Regular user</option>
                                     <option name="admin" value="admin">Administrator</option>
                                 </select>

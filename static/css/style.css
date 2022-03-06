@@ -236,11 +236,11 @@ input[type="email"]:focus{
 }
 @media(max-width: 576px){
     .card{
-        width: 250px;
+        width: 300px;
     }
 }
 @media(max-width: 375px){
     .card{
-        width: 250px;
+        min-width: 200px;
     }
 }
