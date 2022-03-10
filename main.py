@@ -19,7 +19,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
         method = request.form['method']
-        if canLogin(str(username),str(password), 'sudo' if 'admin' in str(method) else False):
+        if canLogin(str(username),str(password), 'web_manager' if 'admin' in str(method) else False):
             session['username'] = username
             return redirect(url_for('index'))
         else:
