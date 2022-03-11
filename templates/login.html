@@ -31,7 +31,7 @@
 				<div class="col-lg-8">
 					<div class="signup__form signup__center">
 							<h4 class="signup__title">SIGN IN</h4>
-							<form method=post action={{url_for('login')}} class="form">
+							<form method=post action="{{url_for('login')}}" class="form">
 								<div class="input_group form__item">
 									<i class="far fa-user"></i>
 									<input type="text" placeholder="Username" name=username>
@@ -45,7 +45,7 @@
 									<option name="admin" value="admin">Administrator</option>
 								</select>
 								<div class="input_group form__item form__item--center">
-									<input class="btn btn--primary" type="submit" value="Login">
+									<input class="btn btn--primary" style="padding: 10px 100px;font-size: 20px;" type="submit" value="Login">
 								</div>
 							</form>
 							<p class="signup__para signup__para--sm">You can find relevant resources in the following communities</p>
