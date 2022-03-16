@@ -14,29 +14,43 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <span style="position: absolute;left:25px;top:10% ;font-size:25px;transform: translate(-28%,-18%);font-family: 'Orbitron', sans-serif;color: #000;">{{user_title}}</span>
-                    <img src="{{ url_for('static',filename='images/user.png') }}" class="img-circle elevation-2" alt="User Image">
+                    <span
+                        style="position: absolute;left:25px;top:10% ;font-size:25px;transform: translate(-28%,-18%);font-family: 'Orbitron', sans-serif;color: #000;">{{user_title}}</span>
+                    <img src="{{ url_for('static',filename='images/user.png') }}" class="img-circle elevation-2"
+                        alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">{{username}}</a>
                 </div>
             </div>
             <!-- Sidebar Menu -->
-            <nav class="mt-2">
+            <nav  class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                    <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+                    <li id="main_menu" class="nav-item menu-open">
+                        <a href="#3" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                Starter Pages
+                                系統
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
+                        <ul id="content_menu" class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="{{url_for('index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Active Page</p>
+                                    <p>主機狀態</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url_for('test')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>系統日誌</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url_for('test2')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>儲存裝置</p>
                                 </a>
                             </li>
                         </ul>
@@ -67,7 +81,8 @@
                             role="button" style="display: inline-block;padding:0px;margin-right: 15px;">
                             <i class="fas fa-bars"></i>
                         </a>
-                        Dashboard
+                        
+                        {% block content_title %}{% endblock content_title %}
                     </h1>
                 </div>
                 <div class="col-sm-6">
@@ -78,4 +93,7 @@
             </div>
         </div>
     </div>
+    <!-- CUSTOM SCRIPT -->
+    <script src="{{ url_for('static',filename='js/dashboard.js') }}"></script>
+    <!-- CUSTOM SCRIPT END-->
 {% endblock nav %}

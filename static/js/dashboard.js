@@ -51,3 +51,20 @@ $sidebar.append($('<div />', {
         "vertical-align": "baseline"
     }
 }).append($dark_mode_checkbox).append($logout))
+
+$(function () {
+    $("#content_menu li a").click(function () {
+        console.log($(this));
+        $(this).siblings('#content_menu li a').removeClass('active');  // 删除其他兄弟元素的样式
+        $(this).addClass('active');
+    });
+});
+$(document).ready(function () {
+    $("#content_menu li a").each(function () {
+        $this = $(this);
+        if ($this[0].href == String(window.location)) {
+            $this.removeClass("active");
+            $this.addClass("active");  //active表示被选中效果的类名
+        }
+    });
+}); 

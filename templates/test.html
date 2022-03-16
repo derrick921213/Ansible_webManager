@@ -1,24 +1,21 @@
 {% extends "bar.html" %}
 
-
 {% block head %}
-  <title>控制台</title>
+  <title>系統日誌</title>
 {% endblock head %}
 
 {% block content_title %}
-	Dashboard
+	Test
 {% endblock content_title %}
 
 {% block body %}
 <body class="hold-transition sidebar-mini">
-	<div class="wrapper"  >
-		
+	<div class="wrapper">
 		{% block aside %} {{ super() }} {% endblock aside %}
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			{% block nav %} {{ super() }} {% endblock nav %}
 			<!-- Main content -->
-			<!-- style="border:none;" -->
 			<div class="content">
 				<div class="container-fluid">
 					<div class="row">
@@ -34,11 +31,11 @@
 									<a href="#" class="card-link">Another link</a>
 								</div>
 							</div>
-			
+
 							<div class="card card-primary card-outline">
 								<div class="card-body">
 									<h5 class="card-title">Card title</h5>
-			
+
 									<p class="card-text">
 										Some quick example text to build on the card title and make up the bulk of the card's
 										content.
@@ -56,19 +53,19 @@
 								</div>
 								<div class="card-body">
 									<h6 class="card-title">Special title treatment</h6>
-			
+
 									<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 									<a href="#" class="btn btn-primary">Go somewhere</a>
 								</div>
 							</div>
-			
+
 							<div class="card card-primary card-outline">
 								<div class="card-header">
 									<h5 class="m-0">Featured</h5>
 								</div>
 								<div class="card-body">
 									<h6 class="card-title">Special title treatment</h6>
-			
+
 									<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 									<a href="#" class="btn btn-primary">Go somewhere</a>
 								</div>

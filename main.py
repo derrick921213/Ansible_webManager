@@ -11,6 +11,20 @@ def index():
         return render_template('starter.html',user_title=user_title,username=session['username'])
     return redirect(url_for('login'))
 
+@app.route('/test')
+def test():
+    if 'username' in session:
+        user_title = list(session['username'])[0].upper()
+        return render_template('test.html',user_title=user_title,username=session['username'])
+    return redirect(url_for('login'))
+
+@app.route('/test1')
+def test1():
+    return ('test1')
+
+@app.route('/test2')
+def test2():
+    return render_template('test2.html')
 
 @app.route('/login',methods=['GET','POST'])
 def login():
